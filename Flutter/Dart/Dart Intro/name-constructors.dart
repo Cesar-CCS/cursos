@@ -2,7 +2,7 @@ void main(){
 //Mapeo de Json 
   final Map<String, dynamic> rawJson = {
     'name': 'Spiderman',
-    'power': 'Trepar paredes',
+    'power': 'Trepar paredes ',
     'isAlive': true
   };
 
@@ -27,6 +27,7 @@ class Hero {
     required this.isAlive
   });
 
+  //Mapeo de Jason
   Hero.fromJson(Map<String, dynamic> json) 
   :name = json['name'] ?? 'No name found',
   power = json['power'] ?? 'No power found',

@@ -23,8 +23,14 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
                 clickCounter = 0;
               });
             },
-          )
+          ),
         ],
+        // leading: IconButton(
+        //   icon: const Icon(Icons.refresh_rounded),
+        //   onPressed: () {
+        //     clickCounter = 0;
+        //   },
+        // ),
         // backgroundColor: const Color(0xFF25AFF3),
         // toolbarHeight: 100,
       ),
@@ -44,16 +50,60 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
           ],
         ),
       ),
-      floatingActionButton: Column(children: [
-        FloatingActionButton(
+      floatingActionButton:
+          Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        CustomButtom(
+          icon: Icons.refresh_rounded,
+          onPressed: () {
+            clickCounter = 0;
+            setState(() {});
+          },
+        ),
+        const SizedBox(height: 10),
+        CustomButtom(
+          icon: Icons.exposure_minus_1_outlined,
+          onPressed: () {
+            setState(() {
+              if (clickCounter == 0) return;
+              clickCounter--;
+            });
+          },
+        ),
+        const SizedBox(height: 10),
+        CustomButtom(
+          icon: Icons.plus_one,
           onPressed: () {
             setState(() {
               clickCounter++;
             });
           },
-          child: const Icon(Icons.plus_one),
         )
       ]),
+    );
+  }
+}
+
+class CustomButtom extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback? onPressed;
+
+  const CustomButtom({
+    super.key,
+    required this.icon,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      //shape: const StadiumBorder(),
+      elevation: 10,
+      backgroundColor: Colors.deepPurpleAccent.shade100,
+      onPressed: onPressed,
+      child: Icon(
+        icon,
+        color: Colors.black,
+      ),
     );
   }
 }

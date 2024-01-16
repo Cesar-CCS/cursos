@@ -27,7 +27,7 @@ class HerMessageBubble extends StatelessWidget {
         ),
         const SizedBox(height: 5),
 
-        _ImageBubble(),
+        _ImageBubble(urlImage: message.imageURL ?? 'Error al Cargar Imagen'),
 
         const SizedBox(height: 10),
         //Todo: Image
@@ -37,14 +37,19 @@ class HerMessageBubble extends StatelessWidget {
 }
 
 class _ImageBubble extends StatelessWidget {
+  final String urlImage;
+
+  const _ImageBubble({required this.urlImage});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    //final String responseMenssage = urlImage ?? 'Error Carga Imagen';
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
-        "https://yesno.wtf/assets/no/11-e6b930256265890554c1464973ebba55.gif",
+        urlImage,
         width: size.width * .7,
         height: 150,
         loadingBuilder: (context, child, loadingProgress) {

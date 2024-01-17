@@ -12,31 +12,25 @@ class AppBarTitle extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Text(
-          tittleBar,
-          style:
-              const TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+      title: const Text(
+        'Inicio - Carga',
+        style: TextStyle(
+            color: Colors.red, fontWeight: FontWeight.bold, fontSize: 25),
+      ),
+      actions: [
+        const Text(
+          "TWT",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            const Text(
-              "TWT",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SvgPicture.asset(
-              'assets/TWT.svg',
-              width: 62.5,
-              height: 62.5,
-            ),
-          ],
+        SvgPicture.asset(
+          'assets/TWT.svg',
+          width: 70,
+          height: 70,
         ),
-      ]),
+      ],
     );
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

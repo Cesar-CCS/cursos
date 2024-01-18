@@ -8,7 +8,31 @@ class InitialCharge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarTitle(tittleBar: "Inicio - Carga"),
+      appBar: const AppBarTitle(tittleBar: "Inicio - Carga"),
+      body: Column(
+        children: [
+          TextButton(
+              onPressed: () => _showDialog(context),
+              child: const Text("Mostrar Dialogo"))
+        ],
+      ),
     );
+  }
+
+  _showDialog(BuildContext context) {
+    return showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+                title: const Text("Titulo del Dialogo"),
+                content: const Text("Contenido del Dialogo"),
+                actions: <Widget>[
+                  TextButton(
+                      onPressed: () => Navigator.pop(context, "Cancel"),
+                      child: const Text("Cancel")),
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, "Ok"),
+                    child: const Text("Ok"),
+                  )
+                ]));
   }
 }

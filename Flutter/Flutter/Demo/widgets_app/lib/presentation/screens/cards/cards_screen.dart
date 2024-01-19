@@ -28,8 +28,8 @@ class _CardsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [...cards.map((card) => null)],
-    );
+        //children: [...cards.map((card) => null)],
+        );
   }
 }
 
@@ -43,8 +43,7 @@ class _CardType1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: elevation,
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(10, 5, 10, 10).),
+      child: Padding(padding: EdgeInsets.fromLTRB(10, 5, 10, 10)),
     );
   }
 }

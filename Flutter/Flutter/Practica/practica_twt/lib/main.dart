@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practica_twt/presentation/screens/initical_charge.dart';
+import 'package:practica_twt/config/router/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: InitialCharge());
+    return MaterialApp.router(
+      routerConfig: appRouter,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

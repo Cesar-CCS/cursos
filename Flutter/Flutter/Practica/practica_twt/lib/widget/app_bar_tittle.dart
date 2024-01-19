@@ -12,9 +12,10 @@ class AppBarTitle extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text(
-        'Inicio - Carga',
-        style: TextStyle(
+      automaticallyImplyLeading: false,
+      title: Text(
+        tittleBar,
+        style: const TextStyle(
             color: Colors.red, fontWeight: FontWeight.bold, fontSize: 25),
       ),
       actions: [

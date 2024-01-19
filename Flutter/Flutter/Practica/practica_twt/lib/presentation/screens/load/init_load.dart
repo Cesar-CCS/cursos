@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:practica_twt/presentation/screens/screens.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
 import 'package:practica_twt/widget/app_bar_tittle.dart';
 import 'package:practica_twt/widget/direction_button.dart';
 
@@ -20,19 +18,14 @@ class InitLoad extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               DirectionButton(
+                  itsBack: true,
                   onPressed: () {
                     context.pop();
                   },
-                  useIcon: Icons.arrow_back_ios_new_outlined,
-                  useText: 'ATRAS',
                   width: 158.85,
-                  height: 25),
+                  height: 50),
               DirectionButton(
-                  onPressed: () {},
-                  useIcon: Icons.arrow_forward_ios_rounded,
-                  useText: 'SIGUIENTE',
-                  width: 158.85,
-                  height: 25)
+                  itsBack: false, onPressed: () {}, width: 158.85, height: 50)
             ],
           )
         ],

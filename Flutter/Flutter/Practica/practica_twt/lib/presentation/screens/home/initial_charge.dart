@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
 import 'package:practica_twt/presentation/screens/screens.dart';
 //import 'package:go_router/go_router.dart';
@@ -31,11 +32,10 @@ class InitialCharge extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.all(50),
                 child: DirectionButton(
+                  itsBack: false,
                   onPressed: () {
                     context.pushNamed(InitLoad.name);
                   },
-                  useIcon: Icons.play_arrow_rounded,
-                  useText: 'Iniciar Carga',
                   width: 300,
                   height: 50,
                 )),

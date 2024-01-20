@@ -5,6 +5,7 @@ import 'package:practica_twt/presentation/screens/screens.dart';
 //import 'package:go_router/go_router.dart';
 import 'package:practica_twt/widget/app_bar_tittle.dart';
 import 'package:practica_twt/widget/direction_button.dart';
+import 'package:practica_twt/widget/scann_button.dart';
 
 class InitialCharge extends StatelessWidget {
   static const String name = 'initial_charge';
@@ -31,14 +32,11 @@ class InitialCharge extends StatelessWidget {
             ),
             Padding(
                 padding: const EdgeInsets.all(50),
-                child: DirectionButton(
-                  itsBack: false,
-                  onPressed: () {
-                    context.pushNamed(InitLoad.name);
-                  },
-                  width: 300,
-                  height: 50,
-                )),
+                child: ScannButton(
+                    onPressed: () {},
+                    label: 'BUSCAR LOG',
+                    width: 300,
+                    height: 65)),
             const Icon(
               Icons.touch_app_outlined,
               size: 150,

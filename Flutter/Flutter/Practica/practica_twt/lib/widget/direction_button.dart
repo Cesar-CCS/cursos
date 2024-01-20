@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 final Map<String, IconData> iconMap = {
   'back': Icons.arrow_back_ios_new_outlined,
@@ -16,14 +17,18 @@ class DirectionButton extends StatelessWidget {
   const DirectionButton(
       {super.key,
       required this.itsBack,
-      required this.onPressed,
+      this.onPressed,
       required this.width,
       required this.height});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: (onPressed != null)
+          ? onPressed
+          : () {
+              context.pop();
+            },
       style: ElevatedButton.styleFrom(
         //padding: const EdgeInsets.only(left: 10, right: 35),
         backgroundColor: Colors.red,

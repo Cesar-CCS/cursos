@@ -17,11 +17,11 @@ class InitLoad extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              DirectionButton(
+              const DirectionButton(
                   itsBack: true,
-                  onPressed: () {
-                    context.pop();
-                  },
+                  // onPressed: () {
+                  //   context.pop();
+                  // },
                   width: 158.85,
                   height: 50),
               DirectionButton(

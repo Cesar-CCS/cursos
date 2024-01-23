@@ -29,4 +29,9 @@ const appMenuItems = <MenuItem>[
       subTittle: 'Generales y Controlados',
       link: '/pogress',
       icon: Icons.refresh_rounded),
+  MenuItem(
+      tittle: 'Snackbars y dialogos',
+      subTittle: 'Indicadores en Pantalla',
+      link: '/snackbar',
+      icon: Icons.info_outlined),
 ];

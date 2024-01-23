@@ -24,4 +24,9 @@ const appMenuItems = <MenuItem>[
       subTittle: 'Un contenedor estilizado',
       link: '/cards',
       icon: Icons.credit_card),
+  MenuItem(
+      tittle: 'PogressInicators',
+      subTittle: 'Generales y Controlados',
+      link: '/pogress',
+      icon: Icons.refresh_rounded),
 ];

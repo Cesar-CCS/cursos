@@ -17,13 +17,14 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   double borderRadius = 10.0;
 
   void changeForm() {
-    Final random = Random();
+    final random = Random();
 
-    // width =
-    // height
-    // color
-    // borderRadius
-
+    width = random.nextInt(300) + 50;
+    height = random.nextInt(300) + 50;
+    // color = ;
+    borderRadius = random.nextInt(100) + 10;
+    color = Color.fromRGBO(
+        random.nextInt(255), random.nextInt(255), random.nextInt(255), 1);
     setState(() {});
   }
 
@@ -43,7 +44,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
             color: color, borderRadius: BorderRadius.circular(borderRadius)),
       )),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: changeForm,
         child: const Icon(Icons.play_arrow_rounded),
       ),
     );

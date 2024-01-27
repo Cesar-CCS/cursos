@@ -33,7 +33,9 @@ class InitialCharge extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.all(50),
                 child: ScannButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushNamed(InitLoad.name);
+                    },
                     label: 'BUSCAR LOG',
                     width: 300,
                     height: 65)),

@@ -11,6 +11,7 @@ export class Person {
     ) {}
 }
 
+// Herencia ⬇
 // export class Hero extends Person {
 
 //     constructor(
